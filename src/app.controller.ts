@@ -5,6 +5,12 @@ import { AppService } from './app.service';
 @Controller()
 export class AppController {
   constructor(private appService: AppService) {}
+  @Get()
+  getHello(): { message: string } {
+    return {
+      message: 'Hello World from Valkey Redis',
+    };
+  }
 
   @Post('setCache')
   async setCache(@Body() body: { key: string; value: string }) {
