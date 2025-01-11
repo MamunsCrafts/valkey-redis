@@ -29,6 +29,7 @@ export class AppService {
   // Get value from Redis
   async getCache(): Promise<string | null> {
     try {
+      console.log('Hello World from Valkey Redis');
       await this.client.set('test', 'Hello World from Valkey Redis');
       return await this.client.get('test');
     } catch (err) {
@@ -38,6 +39,7 @@ export class AppService {
 
   async setCache(key: string, value: string): Promise<string> {
     try {
+      console.log('Hello World from Valkey Redis 1');
       return await this.client.set(key, value);
     } catch (err) {
       throw new Error(`Failed to set value in Redis: ${err}`);
@@ -45,6 +47,7 @@ export class AppService {
   }
   async getCacheByKey(key: string): Promise<string | null> {
     try {
+      console.log('Hello World from Valkey Redis 3');
       return await this.client.get(key);
     } catch (err) {
       throw new Error(`Failed to get value from Redis: ${err}`);
