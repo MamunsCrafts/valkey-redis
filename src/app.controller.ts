@@ -16,8 +16,8 @@ export class AppController {
 
   @Get('getCache')
   async getCache() {
-    const value = await this.appService.getCache();
-    return { value };
+    await this.appService.getCache();
+    return 'Hello World from Valkey Redis';
   }
 
   @Get('getCacheByKey')
