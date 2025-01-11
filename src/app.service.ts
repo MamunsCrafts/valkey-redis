@@ -27,11 +27,11 @@ export class AppService {
   }
 
   // Get value from Redis
-  async getCache(): Promise<string | null> {
+  async getCache() {
     try {
       console.log('Hello World from Valkey Redis');
-      await this.client.set('test', 'Hello World from Valkey Redis');
-      return await this.client.get('test');
+      //await this.client.set('test', 'Hello World from Valkey Redis');
+      //return await this.client.get('test');
     } catch (err) {
       throw new Error(`Failed to get value from Redis: ${err}`);
     }
